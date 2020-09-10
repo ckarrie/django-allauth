@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from django.contrib.auth import authenticate
+from django.contrib.postgres.fields import JSONField
 from django.contrib.sites.models import Site
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.exceptions import PermissionDenied
@@ -17,7 +18,6 @@ from allauth.utils import get_user_model
 from ..utils import get_request_param
 from . import app_settings, providers
 from .adapter import get_adapter
-from .fields import JSONField
 
 
 class SocialAppManager(models.Manager):
